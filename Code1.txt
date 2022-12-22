@@ -1,0 +1,50 @@
+CREATE DATABASE StepDb
+GO
+USE StepDb
+GO
+
+--CREATE TABLE Cars(
+--[Id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+--[Model] NVARCHAR(50) NOT NULL,
+--[Engine] FLOAT NOT NULL DEFAULT(1)
+--)
+
+--GO
+
+----INSERT INTO Cars([Model],[Engine])
+----VALUES('BMW 528',2),('Malibu',2.5)
+
+--GO
+
+--SELECT [Model],[Engine] FROM Cars
+--SELECT * FROM Cars
+
+GO
+
+--INSERT INTO Cars([Model])
+--VALUES('Maserati Quatraporte')
+
+
+---- PK  Primary Key
+---- FK Foreign Key
+---- UQ Unique
+---- CK Check
+
+GO
+CREATE TABLE Workers(
+[Id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+[SeriaNo] NVARCHAR(50) NOT NULL,
+[Age] INT NOT NULL,
+UNIQUE([SeriaNo]),
+CHECK([Age]>=18),
+--CHECK([SeriaNo]!='')
+)
+GO
+
+INSERT INTO Workers([SeriaNo],[Age])
+VALUES('AA124',22)
+
+GO
+
+SELECT * FROM Workers
+WHERE SeriaNo='AA123'
